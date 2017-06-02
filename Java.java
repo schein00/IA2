@@ -17,26 +17,29 @@ public class Java{
 		Scanner conteudo;
 	    Codification cod = new Codification();
 		String linhas[];
+		
     
         
         try{
             arquivo = new File(args[0]);
 			conteudo = new Scanner(arquivo);
-            
+            int i = 0 ;
+            int count;
+
             long tamanhoArquivo = arquivo.length();
 		    FileInputStream fs = new FileInputStream(arquivo);
 	        DataInputStream in = new DataInputStream(fs);
 
 	        LineNumberReader lineRead = new LineNumberReader(new InputStreamReader(in));
 		    lineRead.skip(tamanhoArquivo);
-            
+            count = lineRead.getLineNumber() + 1;
             linhas  = new String[count];
 			
 			while(conteudo.hasNext()){
 				linhas[i] = conteudo.nextLine();
 				i++;
 			}
-
+			System.out.println(linhas[0]);
             cod.Code(linhas);
             
             
