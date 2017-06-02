@@ -4,7 +4,7 @@ public class Codification{
     public void Code(String L[]){
     		char c;
 
-    		machine = new maq();
+    		maq = new Machine();
     	  	byte states;
     	  	int t = 00;
     	  	System.out.println(t); 
