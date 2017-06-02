@@ -1,6 +1,6 @@
 public class Codification{
 
-  	maq machine;
+  	Machine maq;
     public void Code(String L[]){
     		char c;
 
@@ -11,7 +11,7 @@ public class Codification{
     		for (int i = 0; i < L[0].length(); i++ ) {
     				 
     			c = L[0].charAt(i);
-    			states = machine.estados(c);
+    			states = maq.estados(c);
 
     			System.out.println("estado de saida :\n" + states);			
     			//System.out.println(c);
