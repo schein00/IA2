@@ -10,39 +10,32 @@
 
 import java.util.Scanner;
 import java.io.*;
+import java.util.*;
 
 public class Java{
     public static void main (String[] args) throws FileNotFoundException{
-        File arquivo;
-		Scanner conteudo;
 	    Codification cod = new Codification();
-		String linhas[];
-		
-    
-        
+		Noise noi = new Noise();	
+        ArrayList<Integer> bits = new ArrayList<Integer>();    
+        int p = 0;
+
         try{
-            arquivo = new File(args[0]);
-			conteudo = new Scanner(arquivo);
-            int i = 0 ;
-            int count;
 
-            long tamanhoArquivo = arquivo.length();
-		    FileInputStream fs = new FileInputStream(arquivo);
-	        DataInputStream in = new DataInputStream(fs);
+			System.out.println(args[0]);
+            bits = cod.Code(args[0]);
+            
+    		System.out.println("Main\n");
+            System.out.println("\nbits\n" +  Arrays.toString( bits.toArray() ));
 
-	        LineNumberReader lineRead = new LineNumberReader(new InputStreamReader(in));
-		    lineRead.skip(tamanhoArquivo);
-            count = lineRead.getLineNumber() + 1;
-            linhas  = new String[count];
-			
-			while(conteudo.hasNext()){
-				linhas[i] = conteudo.nextLine();
-				i++;
-			}
-			System.out.println(linhas[0]);
-            cod.Code(linhas);
-            
-            
+            if(args[1] != null){          
+            	p = Integer.parseInt(args[1]);
+            	System.out.println("porcentagem " + p);
+            }
+
+            bits = noi.AddNoise(bits, p);
+
+
+
         }catch(Exception e){
 				System.out.println("Nao e possivel ler o arquivo: " + (args.length > 0 ? args[0] : "(desconhecido)"));
 				System.out.println("Uso:\n java -jar Fikken.jar  /caminho/para/arquivo.fik");
