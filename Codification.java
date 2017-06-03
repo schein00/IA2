@@ -1,20 +1,32 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 public class Codification{
-
+    ArrayList<Integer> bits = new ArrayList<Integer>();
   	Machine maq;
+    String state = "00";
     public void Code(String L[]){
-    		char c;
-
+    		char c = '0';
+        int par [] = new int[2];
     		maq = new Machine();
-    	  	byte states;
-    	  	int t = 00;
-    	  	System.out.println(t); 
-    		for (int i = 0; i < L[0].length(); i++ ) {
-    				 
-    			c = L[0].charAt(i);
-    			states = maq.estados(c);
-
-    			System.out.println("estado de saida :\n" + states);			
-    			//System.out.println(c);
+    	  	
+        
+    		for (int i = 0; i < L[0].length()+ 2; i++ ) {
+    			if( i < L[0].length()){
+    				c = L[0].charAt(i);
+    				//state = machine.estados(state,c);
+    			} 
+          par = maq.emitePar(state,c);	
+          for (int a : par ) {
+    			//	 System.out.println("for 2");
+    				 bits.add(a);
+    			}
+          if( i < L[0].length()){
+    				//c = L[0].charAt(i);
+    				state = maq.estados(state,c);
+    			}
+    		
+          System.out.println("\ni: " +i);
+    			System.out.println("\nbits\n" +  Arrays.toString( bits.toArray() ));
     		}
     //	}
     }
