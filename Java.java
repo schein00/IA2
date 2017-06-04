@@ -15,7 +15,8 @@ import java.util.*;
 public class Java{
     public static void main (String[] args) throws FileNotFoundException{
 	    Codification cod = new Codification();
-		Noise noi = new Noise();	
+		Noise noi = new Noise();
+		Decoding decod = new Decoding();	
         ArrayList<Integer> bits = new ArrayList<Integer>();    
         int p = 0;
 
@@ -33,7 +34,8 @@ public class Java{
             }
 
             bits = noi.AddNoise(bits, p);
-
+			System.out.println("\nbits\n" +  Arrays.toString( bits.toArray() ));	
+            bits = decod.Viterbi(bits);
 
 
         }catch(Exception e){

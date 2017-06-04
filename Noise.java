@@ -3,7 +3,6 @@ import java.util.*;
 public class Noise{
 
 	public ArrayList<Integer> AddNoise(ArrayList<Integer> b, int p){
-		System.out.println("noise \n");
 		int j = 2;
 		ArrayList<Integer> bb = new ArrayList<Integer>();
 
@@ -22,14 +21,7 @@ public class Noise{
 			}else{
 				bb.add(j);
 			}
-			System.out.print(a + " rand "+j+" \n");
-
 		}
-		
-
-
-		System.out.println("\nbits\n" +  Arrays.toString( bb.toArray() ));
-
 		return bb;
 	}
 
