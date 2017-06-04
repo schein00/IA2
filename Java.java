@@ -34,9 +34,12 @@ public class Java{
             }
 
             bits = noi.AddNoise(bits, p);
-			System.out.println("\nbits\n" +  Arrays.toString( bits.toArray() ));	
+			System.out.println("\nbits noise\n" +  Arrays.toString( bits.toArray() ));	
             bits = decod.Viterbi(bits);
 
+            System.out.println("Entrada \n"+ args[0]);
+
+            System.out.println("\nbits pronto\n" +  Arrays.toString( bits.toArray() ));	
 
         }catch(Exception e){
 				System.out.println("Nao e possivel ler o arquivo: " + (args.length > 0 ? args[0] : "(desconhecido)"));
