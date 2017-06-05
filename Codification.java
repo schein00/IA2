@@ -25,8 +25,8 @@ public class Codification{
     				state = maq.estados(state,c);
     			}
     		
-                System.out.println("\ni: " +i);
-    			System.out.println("\nbits\n" +  Arrays.toString( bits.toArray() ));
+         //       System.out.println("\ni: " +i);
+    	//		System.out.println("\nbits\n" +  Arrays.toString( bits.toArray() ));
     		}
     //	}
         return bits;

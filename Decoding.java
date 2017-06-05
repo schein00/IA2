@@ -68,14 +68,38 @@ public class Decoding{
  				e00 = e00 + 2;
 			}
 
-			if(e00 <= e01 && e00 <= e10 &&e00 <= e11){
+			if(e00 < e01 && e00 < e10 && e00 < e11){
  				bit.add(0);
- 			}else if (e01 <= e00 && e01 <= e10 &&e01 <= e11) {
+ 			}else if (e01 < e00 && e01 < e10 && e01 < e11) {
  				bit.add(0);
- 			}else if (e10 <= e00 && e10 <= e01 &&e10 <= e11) {
+ 			}else if (e10 < e00 && e10 < e01 && e10 < e11) {
  				bit.add(1);
+ 			}else if (e11 < e00 && e11 < e01 && e11 < e10) {
+ 				bit.add(1);	
+ 			}else if(e00 == e01 && e00 == e10 && e00 == e11){
+ 				a = (radom.nextInt(100) % 4);
+				if(a == 0){
+					bit.add(0);
+				}else if(a == 1){
+					bit.add(1);
+				}else if ( a == 2) {
+					bit.add(0);
+				}else{
+					bit.add(1);
+				}
  			}else{
- 				bit.add(1);
+ 				if (e00 == e01 && e00 < e10 && e00 < e11) {
+ 					bit.add(0);	
+ 				}else if (e10 == e11 && e10 < e00 && e10 < e01) {
+ 					bit.add(1);
+ 				}else{
+ 					a = (radom.nextInt(100) % 2);
+ 					if(a  == 0){
+						bit.add(0);
+					}else{
+						bit.add(1);
+					}
+ 				}
  			}
 
  			//caso geral
@@ -347,35 +371,57 @@ public class Decoding{
 					e11 = aux3;
 					e01 = aux4;
 	 				e10 = aux5;
-	 				e00 = aux6;					e11 = e10 + 1;
-					e01 = e10 + 1;
-	 				e10 = e00 + 0;
-	 				e00 = e00 + 2;
+	 				e00 = aux6;					
 				}
 
-				if(e00 <= e01 && e00 <= e10 &&e00 <= e11){
+
+				if(e00 < e01 && e00 < e10 && e00 < e11){
 	 				bit.add(0);
-	 			}else if (e01 <= e00 && e01 <= e10 &&e01 <= e11) {
+	 			}else if (e01 < e00 && e01 < e10 && e01 < e11) {
 	 				bit.add(0);
-	 			}else if (e10 <= e00 && e10 <= e01 &&e10 <= e11) {
+	 			}else if (e10 < e00 && e10 < e01 && e10 < e11) {
 	 				bit.add(1);
+	 			}else if (e11 < e00 && e11 < e01 && e11 < e10) {
+	 				bit.add(1);	
+	 			}else if(e00 == e01 && e00 == e10 && e00 == e11){
+	 				a = (radom.nextInt(100) % 4);
+					if(a == 0){
+						bit.add(0);
+					}else if(a == 1){
+						bit.add(1);
+					}else if ( a == 2) {
+						bit.add(0);
+					}else{
+						bit.add(1);
+					}
 	 			}else{
-	 				bit.add(1);
+	 				if (e00 == e01 && e00 < e10 && e00 < e11) {
+	 					bit.add(0);	
+	 				}else if (e10 == e11 && e10 < e00 && e10 < e01) {
+	 					bit.add(1);
+	 				}else{
+	 					a = (radom.nextInt(100) % 2);
+	 					if(a  == 0){
+							bit.add(0);
+						}else{
+							bit.add(1);
+						}
+	 				}
 	 			}
 
 
-				System.out.println("Estado "+ ii +": "+ j + " " + k);
+			//	System.out.println("Estado "+ ii +": "+ j + " " + k);
 				ii++;
 			}
 
 			int m = bit.size();
-			System.out.println(m);
+		//	System.out.println(m);
 			for(int n = bit.size(); n > 0; n--){
 				j = bit.get(n-1);
 				bits.add(j);
 			}
 			
-			System.out.println("termino");
+		//	System.out.println("termino");
 
 			return bit;
 	}
