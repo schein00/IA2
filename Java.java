@@ -21,26 +21,27 @@ public class Java{
         ArrayList<Integer> bitse = new ArrayList<Integer>();		// bits emitidos 
         ArrayList<Integer> bitsn = new ArrayList<Integer>();		// bits emitidos com ruido
 		ArrayList<Integer> bitsp = new ArrayList<Integer>();		// bits decodificados
-		String entrada = new String();
-		int porcentagem = 0, en = 0; 
+		String entrada0 = "", entrada1 = "", entrada2 = "", entrada3 = "", entrada4 = "", entrada5 = "";
+		String entrada = "";
+		int porcentagem = 0, en = 0, ez = 0; 
 		Scanner scanner = new Scanner(System.in);
 
         try{
 
         	while(true){
-
 				
-
-        		if (en == 2) {
+        		if (entrada.equals("2")) {
         			return;
         		}
+				
+        		if(ez != 0){
+	        		entrada0 = scanner.nextLine();
+     			}
 
-           		System.out.println("Para finalizar o programa digite 2");	
+         		System.out.println("Para finalizar o programa digite 2");	
 	       		System.out.print("Digite os bits de entrada: ");
-    	   		en = scanner.nextInt();
-        		entrada = "" + en;
-        		
-           		if (en == 2) {
+        		entrada = scanner.nextLine();
+           		if (entrada.equals("2")) {
         			return;
         		}
         		System.out.print("Digite a porcentagem de cada bit sofrer ruido: ");
@@ -97,6 +98,7 @@ public class Java{
 				bitse = new ArrayList<Integer>();		// bits emitidos 
         		bitsn = new ArrayList<Integer>();		// bits emitidos com ruido
 				bitsp = new ArrayList<Integer>();
+				ez++;
 			}
         }catch(Exception e){
 				System.out.println("Nao e possivel ler o arquivo: " + (args.length > 0 ? args[0] : "(desconhecido)"));
