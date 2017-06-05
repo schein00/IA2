@@ -36,15 +36,14 @@ public class Java{
         		}
 
            		System.out.println("Para finalizar o programa digite 2");	
-	       		System.out.println("Digite os bits de entrada: ");
+	       		System.out.print("Digite os bits de entrada: ");
     	   		en = scanner.nextInt();
         		entrada = "" + en;
         		
-        		System.out.println();
            		if (en == 2) {
         			return;
         		}
-        		System.out.println("Digite a porcentagem de cada bit sofrer ruido: ");
+        		System.out.print("Digite a porcentagem de cada bit sofrer ruido: ");
         		porcentagem = scanner.nextInt();
 
         		
