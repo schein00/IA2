@@ -22,7 +22,7 @@ $ cd Desktop/IA2
 
 2 - Compilas
 
-$ javac *.java
+$ make
 
 3 - Executar
 
