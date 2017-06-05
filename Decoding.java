@@ -1,3 +1,13 @@
+/*
+*	Trabalho I de IA
+*	
+*	Jeferson A. Schein e Ivair Puerari
+*
+*	Classe onde e montado todo o esquema de erro quanto aos estados anteriores e selecionados os bit que sao corretos
+*
+*
+*/
+
 import java.util.*;
 
 public class Decoding{

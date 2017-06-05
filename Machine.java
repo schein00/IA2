@@ -1,3 +1,13 @@
+/*
+*	Trabalho I de IA
+*	
+*	Jeferson A. Schein e Ivair Puerari
+*
+*	Maquina de estados utilizada para fazer a codificacao dos bit de entrada nos bit emitidos
+*
+*
+*/
+
 import java.util.Scanner;
 import java.io.*;
 public class Machine {
@@ -36,7 +46,7 @@ public class Machine {
 					par[0] = 1;
 					par[1] = 1;
 			 }
-			if(st.equals("10")){ 
+			if(st.equals("10"));f{ 
 					par[0] = 1;
 					par[1] = 0;
 			 }

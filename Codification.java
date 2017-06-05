@@ -1,3 +1,14 @@
+/*
+*   Trabalho I de IA
+*   
+*   Jeferson A. Schein e Ivair Puerari
+*
+*   Classe utilizada para fazer a codificacao dos bits de entrada na sequancia que e transferia para o decodificador
+*
+*
+*/
+
+
 import java.util.ArrayList;
 import java.util.Arrays;
 public class Codification{

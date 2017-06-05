@@ -1,3 +1,13 @@
+/*
+*	Trabalho I de IA
+*	
+*	Jeferson A. Schein e Ivair Puerari
+*
+*	Classe onde e feita a adicao de ruido nos bit que sera enviados pela rede
+*	sorteaia um numero aleatorio entre 0 - 99, se ele estiver abaixo do numero informado na entrada programa o bit sofrera ruido 
+*	senao ele continuara como esta
+*/
+
 import java.util.*;
 
 public class Noise{

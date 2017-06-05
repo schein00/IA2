@@ -3,7 +3,7 @@
 *	
 *	Jeferson A. Schein e Ivair Puerari
 *
-*	
+*	Codificador e Decodigicador de bits, utilizando Viterbi
 *
 *
 */
