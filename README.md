@@ -26,10 +26,4 @@ $ make
 
 3 - Executar
 
-$ java Java bitEntrada porcentagemRuido
-
-bitEntrada - conjunto de bits de entrada - 10010101
-
-porcentagemRuido - qual a chance de caada cada bit sofrer ruido - varia de 0 - 100
-
-$ java Java 10010 50
+$ java Java
