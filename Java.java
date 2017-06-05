@@ -21,49 +21,84 @@ public class Java{
         ArrayList<Integer> bitse = new ArrayList<Integer>();		// bits emitidos 
         ArrayList<Integer> bitsn = new ArrayList<Integer>();		// bits emitidos com ruido
 		ArrayList<Integer> bitsp = new ArrayList<Integer>();		// bits decodificados
+		String entrada = new String();
+		int porcentagem = 0, en = 0; 
+		Scanner scanner = new Scanner(System.in);
 
         try{
-        	 int p = 0;
-        	char z = '0';
-			System.out.println(args[0]);
-            bitse = cod.Code(args[0]);
-            for ( int s = 0; s < args[0].length() ; s++ ) {
-            	z = args[0].charAt(s);
-            	if(z == '0'){
-       		     	bits.add(0);
-            	}else{
-            		bits.add(1);
-            	}
-            }
-    		
-            if(args[1] != null){          
-            	p = Integer.parseInt(args[1]);
-            	System.out.println("Probabilidade de Ruido Acontecer em cada bit: " + p +"%");
-            }
 
-            bitsn = noi.AddNoise(bitse, p);	
-            bitsp = decod.Viterbi(bitsn);
+        	while(true){
 
-            System.out.println("\nBits de Entrada\n" +  Arrays.toString( bits.toArray() ));
-            System.out.println("\nBits Emitidos\n" +  Arrays.toString( bitse.toArray() ));	
-			System.out.println("\nBits Emitidos com Ruido\n" +  Arrays.toString( bitsn.toArray() ));	
-            System.out.println("\nBits Decodificados\n" +  Arrays.toString( bitsp.toArray() ));	
+				
+
+        		if (en == 2) {
+        			return;
+        		}
+
+           		System.out.println("Para finalizar o programa digite 2");	
+	       		System.out.println("Digite os bits de entrada: ");
+    	   		en = scanner.nextInt();
+        		entrada = "" + en;
+        		
+        		System.out.println();
+           		if (en == 2) {
+        			return;
+        		}
+        		System.out.println("Digite a porcentagem de cada bit sofrer ruido: ");
+        		porcentagem = scanner.nextInt();
+
+        		
+        		System.out.println("entrada: "+ entrada);
+        		
+        		System.out.println("porcentagem: " + porcentagem);
+        		
+	        	char z = '0';
+				System.out.println(entrada);
+	            bitse = cod.Code(entrada);
+
+	            for( int s = 0; s < entrada.length() ; s++ ){
+	            	z = entrada.charAt(s);
+	            	if(z == '0'){
+	       		     	bits.add(0);
+	            	}else{
+	            		bits.add(1);
+	            	}
+	            }
+	    		
+//	            if(args[1] != null){          
+//	            	p = Integer.parseInt(args[1]);
+//	            	System.out.println("Probabilidade de Ruido Acontecer em cada bit: " + p +"%");
+//	            }
+
+	            bitsn = noi.AddNoise(bitse, porcentagem);	
+	            bitsp = decod.Viterbi(bitsn);
+
+	            System.out.println("\nBits de Entrada\n" +  Arrays.toString( bits.toArray() ));
+	            System.out.println("\nBits Emitidos\n" +  Arrays.toString( bitse.toArray() ));	
+				System.out.println("\nBits Emitidos com Ruido\n" +  Arrays.toString( bitsn.toArray() ));	
+	            System.out.println("\nBits Decodificados\n" +  Arrays.toString( bitsp.toArray() ));	
 
 
-            //Comparsion
-            int qerro = 0;
-            for (int i = 0; i < bits.size() ; i++) {
-            	if (bits.get(i) != bitsp.get(i)) {
-            		qerro = qerro + 1; 
-            	}
-            }
+	            //Comparsion
+	            int qerro = 0;
+	            for (int i = 0; i < bits.size() ; i++) {
+	            	if (bits.get(i) != bitsp.get(i)) {
+	            		qerro = qerro + 1; 
+	            	}
+	            }
 
-            System.out.println("Quantia de bits de entrada: " + bits.size());
-            System.out.println("Quantia de bit Decodificados corretamente:  " + (bits.size() - qerro));
-            System.out.println("Quantia de bits de Decodificados errados: " + qerro);
-            
-            System.out.println("\n\n\n");
-
+	            System.out.println("Quantia de bits de entrada: " + bits.size());
+	            System.out.println("Quantia de bit Decodificados corretamente:  " + (bits.size() - qerro));
+	            System.out.println("Quantia de bits de Decodificados errados: " + qerro);
+	            
+	            cod = new Codification();
+	            System.out.println("\n\n\n");
+				entrada = new String();
+				bits = new ArrayList<Integer>();
+				bitse = new ArrayList<Integer>();		// bits emitidos 
+        		bitsn = new ArrayList<Integer>();		// bits emitidos com ruido
+				bitsp = new ArrayList<Integer>();
+			}
         }catch(Exception e){
 				System.out.println("Nao e possivel ler o arquivo: " + (args.length > 0 ? args[0] : "(desconhecido)"));
 				System.out.println("Uso:\n java -jar Fikken.jar  /caminho/para/arquivo.fik");
