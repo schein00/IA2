@@ -21,7 +21,7 @@ public class Codification{
     		maq = new Machine();
     	  	
         
-    		for (int i = 0; i < L.length() + 1; i++ ) {
+    		for (int i = 0; i < L.length() + 2; i++ ) {
     			if( i < L.length()){
     				c = L.charAt(i);
     				//state = machine.estados(state,c);

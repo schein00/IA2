@@ -46,7 +46,7 @@ public class Machine {
 					par[0] = 1;
 					par[1] = 1;
 			 }
-			if(st.equals("10"));f{ 
+			if(st.equals("10"));{ 
 					par[0] = 1;
 					par[1] = 0;
 			 }

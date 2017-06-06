@@ -113,7 +113,7 @@ public class Decoding{
  			}
 
  			//caso geral
-			for(int i = 4; i < (b.size() - 2); i = i + 2){
+			for(int i = 4; i < (b.size() - 4); i = i + 2){
 				j = b.get(i);
 				k = b.get(i + 1);
 
